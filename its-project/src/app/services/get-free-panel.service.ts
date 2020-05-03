@@ -5,18 +5,20 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class GetFreeTechPanelService {
   
-  public params=new HttpParams().set('date',"2020-02-01")
-  .set('time',"10:50");
-  public panelparams=new HttpParams();
+  public params=new HttpParams().set('date',"2020-02-02")
+  .set('time',"14:40");
+  public panelparams;
+ 
   public httpHeaders:HttpHeaders;
   constructor(private http:HttpClient) {
     this.httpHeaders=new HttpHeaders()
     .set('allow-origin-access-control','*')
     .set('Content-type','application/json')
     .set('auth-token','35139f32:1')
-    .set('Access-Control-Allow-Credentials','true')
+    .set('Access-Control-Allow-withCredentials','true')
     .set('Access-Control-Allow-Headers','X-Requested-With,content-type')
-    .set('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS')
+    .set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE')
+    .set('Access-Control-Allow-Origin','*');
    }
    getTechPanel():Observable<Object> {
     return this.http.get('http://localhost:8080/admin/interviewer/tech/' ,{headers:this.httpHeaders,params:this.params});
@@ -26,9 +28,8 @@ export class GetFreeTechPanelService {
    }
 
    sendtoTech(techid):Observable<Object>{
-    this.panelparams.set('candidateId',"101").set('date',"2020-02-01")
-    .set('time',"10:50").set('interviewerId',techid).set('subject',"hindi");
-    return this.http.put('http://localhost:8080/admin/interviewer/totech/' ,{headers:this.httpHeaders,params:this.panelparams})
+    return this.http.put('http://localhost:8080/admin/totech/' ,{},{headers:this.httpHeaders,params:{'candidateId':"101",'date':"2020-02-02",'time':"10:50",'interviewerId':techid,'subject':"hindi"}})
+    
    }
   ngOnInit(){
   }

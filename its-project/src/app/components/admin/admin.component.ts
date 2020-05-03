@@ -13,7 +13,6 @@ export class AdminComponent {
   public freePanelHr;
   public techid;
   public dummy;
-
   constructor(private getFreeTechPanelService: GetFreeTechPanelService) 
   { 
     getFreeTechPanelService.getTechPanel().subscribe((response)=> {
