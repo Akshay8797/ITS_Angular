@@ -16,7 +16,7 @@ export class AdminComponent {
   { 
     getFreeTechPanelService.getTechPanel().subscribe((response)=> {
       this.freePanel=response;
-      console.log("Received products: ",this.freePanel);
+      console.log("Received : ",this.freePanel);
     })
 
 }
