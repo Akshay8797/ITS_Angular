@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service'
 
-
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -12,8 +11,10 @@ export class AdminComponent {
 
   public freePanel;
   public freePanelHr;
+  public techid;
+  public dummy;
 
-  constructor(getFreeTechPanelService: GetFreeTechPanelService) 
+  constructor(private getFreeTechPanelService: GetFreeTechPanelService) 
   { 
     getFreeTechPanelService.getTechPanel().subscribe((response)=> {
       this.freePanel=response;
@@ -21,7 +22,14 @@ export class AdminComponent {
     })
     getFreeTechPanelService.getHrPanel().subscribe((response)=> {
       this.freePanelHr=response;
-      console.log("Received : ",this.freePanelHr);})
-      
+      console.log("Received : ",this.freePanelHr);})     
 }
+
+OnTechSelect(techid){
+  this.getFreeTechPanelService.sendtoTech(techid).subscribe((response)=>{
+      this.dummy=response;
+      console.log("Received : ",this.dummy);
+  });
+}
+
 }

@@ -1,1 +1,12 @@
 <p>admin works!</p>
+<div>
+    <label for=techPanel>
+        Select Technical Panel
+    </label>
+    <select id=techPanel (change)="OnTechSelect(techid)" [(ngModel)]="techid">
+        <option >--Select Panel--</option>
+        <option *ngFor="let element of freePanel;" [ngValue]="element.techId">
+            {{element.techName}}
+        </option>
+    </select>
+</div>

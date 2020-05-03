@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service'
-
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [GetFreeTechPanelService],
   bootstrap: [AppComponent]
