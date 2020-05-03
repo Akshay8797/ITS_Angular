@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetFreeTechPanelService } from 'src/app/services/get-free-tech-panel.service'
+import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service'
 
 
 @Component({
@@ -11,6 +11,7 @@ import { GetFreeTechPanelService } from 'src/app/services/get-free-tech-panel.se
 export class AdminComponent {
 
   public freePanel;
+  public freePanelHr;
 
   constructor(getFreeTechPanelService: GetFreeTechPanelService) 
   { 
@@ -18,6 +19,9 @@ export class AdminComponent {
       this.freePanel=response;
       console.log("Received : ",this.freePanel);
     })
-
+    getFreeTechPanelService.getHrPanel().subscribe((response)=> {
+      this.freePanelHr=response;
+      console.log("Received : ",this.freePanelHr);})
+      
 }
 }

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GetFreeTechPanelService } from './get-free-tech-panel.service';
+import { GetFreeTechPanelService } from './get-free-panel.service';
 
 describe('GetFreeTechPanelService', () => {
   let service: GetFreeTechPanelService;

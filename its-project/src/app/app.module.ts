@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { GetFreeTechPanelService } from 'src/app/services/get-free-tech-panel.service'
+import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service'
 
 
 @NgModule({

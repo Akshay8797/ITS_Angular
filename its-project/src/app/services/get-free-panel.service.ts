@@ -17,6 +17,9 @@ export class GetFreeTechPanelService {
    getTechPanel():Observable<Object> {
     return this.http.get('http://localhost:8080/admin/interviewer/tech/' ,{headers:this.httpHeaders,params:this.params});
    }
+   getHrPanel():Observable<Object> {
+    return this.http.get('http://localhost:8080/admin/interviewer/hr/' ,{headers:this.httpHeaders,params:this.params});
+   }
   ngOnInit(){
     
   }
