@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service'
-
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -21,14 +20,41 @@ export class AdminComponent {
   public detailsSharedWith;
 
   constructor(private getFreeTechPanelService: GetFreeTechPanelService) 
-  { 
-    getFreeTechPanelService.getTechPanel().subscribe((response)=> {
+  {
+   /* getFreeTechPanelService.getTechPanel().subscribe((response)=> {
       this.freePanel=response;
       console.log("Received : ",this.freePanel);
     })
     getFreeTechPanelService.getHrPanel().subscribe((response)=> {
       this.freePanelHr=response;
       console.log("Received : ",this.freePanelHr);});     
+      getFreeTechPanelService.addCandidate({
+        "primarySkills":"C++",
+        "secondarySkills":"Chjjs", 
+        "experience":2, 
+          "qualification": "Btech",
+          "designation":"engineer",
+          "noticePeriod":4,
+          "location":"dhan",
+          "shareDetails":2,
+           "firstName":"Java",
+        "lastName":"Chjjs", 
+        "dateOfBirth":"2017-01-13", 
+          "gender": "M",
+          "street":"dhen",
+          
+          "city":"dhan",
+          "state":"jhar",
+          "pincode":1223,
+          "mobileNo":98999,
+          "emailId":"goluays"
+        
+}
+).subscribe((response)=> {
+  this.freePanel=response;
+  console.log("New Candidate added : ",response);
+});
+
 }
 
 OnTechSelect(techid){
@@ -45,5 +71,6 @@ OnTechShare(id){
     console.log("Received : ",this.detailsSharedWith);
   })
 }
-
+*/
+}
 }
