@@ -21,7 +21,7 @@ export class AdminComponent {
 
   constructor(private getFreeTechPanelService: GetFreeTechPanelService) 
   {
-   /* getFreeTechPanelService.getTechPanel().subscribe((response)=> {
+   getFreeTechPanelService.getTechPanel().subscribe((response)=> {
       this.freePanel=response;
       console.log("Received : ",this.freePanel);
     })
@@ -71,6 +71,6 @@ OnTechShare(id){
     console.log("Received : ",this.detailsSharedWith);
   })
 }
-*/
+
 }
 }
