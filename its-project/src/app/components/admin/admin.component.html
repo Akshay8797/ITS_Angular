@@ -1,5 +1,16 @@
 <p>admin works!</p>
 <div>
+    <label for="share">
+        Select to share details : <br>
+    </label>
+    <select id=share (change)="OnTechShare(id)" [(ngModel)]="id">
+        <option >--Select Panel--</option>
+        <option *ngFor="let element of detailsNumber;" [ngValue]="element.id" >
+            {{element.name}}
+        </option>
+    </select>
+</div>
+<div>
     <label for=techPanel>
         Select Technical Panel
     </label>

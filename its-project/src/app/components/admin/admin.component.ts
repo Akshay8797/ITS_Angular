@@ -12,7 +12,14 @@ export class AdminComponent {
   public freePanel;
   public freePanelHr;
   public techid;
-  public dummy;
+  public techPanelSelected;
+  public detailsNumber =[{'id':0 ,'name':"None"},
+                         {'id':1 , 'name':"Technical Panel"},
+                         {'id':2 , 'name':"HR Panel"},
+                         {'id':3 , 'name':"Both"}];
+  public id;
+  public detailsSharedWith;
+
   constructor(private getFreeTechPanelService: GetFreeTechPanelService) 
   { 
     getFreeTechPanelService.getTechPanel().subscribe((response)=> {
@@ -21,14 +28,22 @@ export class AdminComponent {
     })
     getFreeTechPanelService.getHrPanel().subscribe((response)=> {
       this.freePanelHr=response;
-      console.log("Received : ",this.freePanelHr);})     
+      console.log("Received : ",this.freePanelHr);});     
 }
 
 OnTechSelect(techid){
   this.getFreeTechPanelService.sendtoTech(techid).subscribe((response)=>{
-      this.dummy=response;
-      console.log("Received : ",this.dummy);
+      this.techPanelSelected=response;
+      console.log("Received : ",this.techPanelSelected);
   });
+}
+
+OnTechShare(id){
+  console.log(typeof(id),id);
+  this.getFreeTechPanelService.shareDetails(id).subscribe((response)=>{
+    this.detailsSharedWith=response;
+    console.log("Received : ",this.detailsSharedWith);
+  })
 }
 
 }

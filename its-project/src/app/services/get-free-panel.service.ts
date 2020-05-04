@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 export class GetFreeTechPanelService {
   
   public params=new HttpParams().set('date',"2020-02-02")
-  .set('time',"14:40");
+  .set('time',"10:40");
   public panelparams;
  
   public httpHeaders:HttpHeaders;
@@ -28,8 +28,13 @@ export class GetFreeTechPanelService {
    }
 
    sendtoTech(techid):Observable<Object>{
-    return this.http.put('http://localhost:8080/admin/totech/' ,{},{headers:this.httpHeaders,params:{'candidateId':"101",'date':"2020-02-02",'time':"10:50",'interviewerId':techid,'subject':"hindi"}})
+    return this.http.put('http://localhost:8080/admin/totech/' ,{},{headers:this.httpHeaders,params:{'candidateId':"101",'date':"2020-02-02",'time':"10:50",'interviewerId':techid,'subject':"hindi"}});
     
+   }
+
+   shareDetails(id):Observable<Object>{
+     console.log(typeof(id),id+' in service');
+     return this.http.put('http://localhost:8080/admin/share/',{},{headers:this.httpHeaders,params:{'candidateId':"101",'number':id}});
    }
   ngOnInit(){
   }
