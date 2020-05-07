@@ -8,6 +8,7 @@ export class TechPanelService{
     }
     getAllInterviewCandidateList():Observable<Object>{
         let httpHeaders=new HttpHeaders()
+        .set('auth-token',sessionStorage.getItem('sessionId'))
         .set('allow-origin-access-control','*')
         .set('Content-type','application/json');
 
@@ -15,6 +16,7 @@ export class TechPanelService{
     }
     giveTechRating(interviewId,interviewScheduleObj):Observable<Object>{
         let httpHeaders=new HttpHeaders()
+        .set('auth-token',sessionStorage.getItem('sessionId'))
         .set('allow-origin-access-control','*')
         .set('Content-type','application/json');
 
@@ -22,6 +24,7 @@ export class TechPanelService{
     }
     getResults():Observable<Object>{
         let httpHeaders=new HttpHeaders()
+        .set('auth-token',sessionStorage.getItem('sessionId'))
         .set('allow-origin-access-control','*')
         .set('Content-type','application/json');
 
