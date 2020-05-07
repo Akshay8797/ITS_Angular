@@ -1,0 +1,60 @@
+<!--View Candidates to be Interviewed-->
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Interview Management</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Tech Panel</p>
+          
+            <li class="active">
+                <a href="#informationMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Information</a>
+                <ul class="collapse list-unstyled" id="informationMenu">
+                    <li>
+                        <a routerLink="/techPanelHomePage/techPanelInterviewList" routerLinkActive="active">Interview Qualifiers List</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a routerLink="/techPanelHomePage/techPanelRating" routerLinkActive="active">Give Rating</a>
+            </li>
+            <li>
+                <a routerLink="/techPanelHomePage/techPanelResult" routerLinkActive="active">View Final Results</a>
+            </li>
+        </ul>
+    </nav>
+    
+
+    <!-- Page Content  -->
+    <div id="content">
+        
+    </div>
+    
+</div>
+
+<table class="table table-bordered table-hover offset-md-3 col-md-8" >
+    <thead>
+    <tr>
+        <th>Interview Id</th>
+        <th>Interview Date</th>
+        <th>Interview Time</th>
+        <th>Subject</th>
+        <th>Tech Rating</th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let candidate of interviewCandidateList">
+        <td>{{candidate.interviewId}}</td>
+        <td>{{candidate.interviewDate}}</td>
+        <td>{{candidate.interviewTime}}</td>
+        <td>{{candidate.subject}}</td>
+        <td>{{candidate.techRating}}</td>
+    </tr>
+    </tbody>
+</table> 
+<!--Give Tech Rating-->
+<h1></h1>
+<!--{{interviewCandidateList | json}}{{finalResultList | json}} --> 
+<router-outlet></router-outlet>
