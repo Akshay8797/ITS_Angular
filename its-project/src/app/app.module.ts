@@ -16,7 +16,11 @@ import { ScheduleHrinterviewFormComponent } from './components/schedule-hrinterv
 import { GetRatingsComponent } from './components/get-ratings/get-ratings.component'
 import { RegisterComponent } from './components/registration/registration.component'
 import { SearchComponent } from './components/search/search.component';
-import { UserComponent } from './components/login_new/user.component'
+import { UserComponent } from './components/login_new/user.component';
+import { TechPanelRatingComponent } from './components/techPanelComponent/techPanelRating.component';
+import { TechPaneInterviewComponent } from './components/techPanelComponent/techPanelInterview.component';
+import { TechPanelResultComponent } from './components/techPanelComponent/techPanelResult.component';
+import{TechPanelHomePageComponent}from './components/tech-panel-home-page/tech-panel-home-page.component';
 
 
 
@@ -30,7 +34,7 @@ import { UserComponent } from './components/login_new/user.component'
     HomeComponent,ScheduleHrinterviewFormComponent,
     ScheduleHrinterviewComponent, GetRatingsComponent,
     RegisterComponent,SearchComponent,
-    UserComponent
+    UserComponent,TechPaneInterviewComponent,TechPanelRatingComponent,TechPanelResultComponent,TechPanelHomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,7 @@ import { UserComponent } from './components/login_new/user.component'
     FormsModule,
     AppRoutingModule
   ],
+  exports: [RouterModule],
   providers: [GetFreeTechPanelService],
   bootstrap: [AppComponent]
 })
