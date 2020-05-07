@@ -1,0 +1,137 @@
+
+
+    
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit(experience,qualification,
+designation,noticeperiod,location,sharedetails,firstname,
+lastname,dob,street,city,state,pincode,mobile,emailid,primaryskills,secondaryskills,gender)">
+ 
+
+<div class="form-group">
+  <label>FirstName</label>
+  <input type="firstname" class="form-control" name="firstname"  #firstname [(ngModel)]="model.firstname" required>
+</div>
+
+<div class="form-group">
+  <label>LastName</label>
+  <input type="lastname" class="form-control" name="lastname"  #lastname [(ngModel)]="model.lastname" required>
+</div>
+
+<div class="form-group">
+  <label>DateOfBirth</label>
+  <input type="dob" class="form-control" name="dateofbirth" #dob [(ngModel)]="model.dateofbirth" required>
+</div>
+
+<div class="form-group">
+  <label>Street</label>
+  <input type="street" class="form-control" name="street"  #street [(ngModel)]="model.street" required>
+</div>
+
+<div class="form-group">
+  <label>City</label>
+  <input type="city" class="form-control" name="city"  #city [(ngModel)]="model.city" required>
+</div>
+ <div class="form-group">
+  <label>State</label>
+  <input type="state" class="form-control" name="state" #state [(ngModel)]="model.state" required>
+</div>
+
+<div class="form-group">
+  <label>PinCode</label>
+  <input type="pincode" class="form-control" name="pincode" #pincode [(ngModel)]="model.pincode" required>
+</div>
+
+<div class="form-group">
+  <label>Mobilenumber</label>
+  <input type="mob" class="form-control" name="mobilenumber" #mobile [(ngModel)]="model.mobilenumber" required>
+</div>
+
+<div class="form-group">
+  <label>Emailid</label>
+  <input type="email" class="form-control" name="email"  #emailid [(ngModel)]="model.email" required>
+</div>
+
+
+
+<div class="form-group">
+  <label>Gender</label>
+ <select class="form-control" name="gender" #gender>
+
+    <option [value]="gen" *ngFor="let gen of Gender;" >
+      {{gen}}
+    </option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label>PrimarySkills</label>
+  
+  <select class="form-control" name="primaryskills" #primaryskills>
+    <label>Select an option</label>
+    <option [value]="ps" *ngFor="let ps of PrimarySkills;" >
+      {{ps}}
+    </option>
+  </select>
+<!--
+  <input type="text" class="form-control" name="primaryskills"  #primaryskills [(ngModel)]="PrimarySkills" required>
+-->
+</div>
+
+<div class="form-group">
+  <label>SecondarySkills</label>
+  
+  <select class="form-control" name="secondaryskillls" #secondaryskills>
+    <label>Select an option</label>
+    <option [value]="ss" *ngFor="let ss of SecondarySkills;">
+      {{ss}}
+    </option>
+  </select>
+
+<!-- 
+
+<input type="text" class="form-control" name="secondaryskills"  #secondaryskills [(ngModel)]="SecondarySkills" required>
+-->
+</div>
+
+
+<div class="form-group">
+    <label>Experience</label>
+    <input type="exp" class="form-control" #experience name="experience" [(ngModel)]="model.experience" required>
+  </div>
+
+  <div class="form-group">
+    <label>Qualification</label>
+    <input type="qualificatuon" class="form-control" #qualification name="qualification" [(ngModel)]="model.qualification" required>
+  </div>
+
+  <div class="form-group">
+    <label>Designation</label>
+    <input type="desig" class="form-control" name="designation" #designation [(ngModel)]="model.designation" required>
+  </div>
+
+  <div class="form-group">
+    <label>NoticePeriod</label>
+    <input type="np" class="form-control" name="noticeperiod"  #noticeperiod [(ngModel)]="model.noticeperiod" required>
+  </div>
+
+  <div class="form-group">
+    <label>Location</label>
+    <input type="location" class="form-control" name="location" #location [(ngModel)]="model.location" required>
+  </div>
+
+  <div class="form-group">
+    <label>ShareDetails</label>
+    <input type="sd" class="form-control" name="sharedetails" #sharedetails [(ngModel)]="model.sharedetails" required>
+  </div>
+
+  
+
+  
+   <!-- <input type="text" class="form-control" name="Gender"  #gender [(ngModel)]="Gender" required>
+  </div>
+-->
+  <div class="form-group">
+    <button class="btn btn-danger btn-block" >Submit</button>
+  </div>
+</form>
+  

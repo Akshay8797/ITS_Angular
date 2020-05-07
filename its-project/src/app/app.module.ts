@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service'
-import { FormsModule } from '@angular/forms';
 import { AdminPageComponent } from './components/adminPage/adminPage.component';
 import { TechpanelComponent } from './components/technicalpanel/technicalpanel.component';
 import { TechInterviewComponent } from './components/techinterviewform/techinterviewform.component';
@@ -17,9 +16,9 @@ import { ScheduleHrinterviewFormComponent } from './components/schedule-hrinterv
 import { GetRatingsComponent } from './components/get-ratings/get-ratings.component'
 import { RegisterComponent } from './components/registration/registration.component'
 import { SearchComponent } from './components/search/search.component';
-
-
-
+import { HrService } from './components/hrCandidates.component';
+import { ResetPassCompomnent } from './components/userResetPass.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,16 +29,19 @@ import { SearchComponent } from './components/search/search.component';
     TechInterviewComponent,
     HomeComponent,ScheduleHrinterviewFormComponent,
     ScheduleHrinterviewComponent, GetRatingsComponent,
-    RegisterComponent,SearchComponent
+    RegisterComponent,SearchComponent,
+    HrService,
+    ResetPassCompomnent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [GetFreeTechPanelService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

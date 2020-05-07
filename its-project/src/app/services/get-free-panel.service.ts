@@ -2,14 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http'
 import { Observable } from 'rxjs';
 
+
 @Injectable()
 export class GetFreeTechPanelService {
   
+  public params=new HttpParams().set('date',"2020-02-02")
+  .set('time',"10:40");
   public panelparams;
-
   public httpHeaders:HttpHeaders;
-
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient) 
+  {
     this.httpHeaders=new HttpHeaders()
     .set('allow-origin-access-control','*')
     .set('Content-type','application/json')
@@ -50,7 +52,7 @@ export class GetFreeTechPanelService {
    getEligibleCandidateForTech():Observable<Object>{
      return this.http.get('http://localhost:8080/admin/techeligible',{});
    }
-
+    
    sendtoTech(id,date,time,techid,subject):Observable<Object>{
     return this.http.put('http://localhost:8080/admin/toTech' ,{},
     {headers:this.httpHeaders,params:{'candidateId':id,'date':date,'time':time,'interviewerId':techid,'subject':subject}})

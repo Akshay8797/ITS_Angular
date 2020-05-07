@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HrService } from './components/hrCandidates.component';
+import { ResetPassCompomnent } from './components/userResetPass.component';
 
 
 import { AdminPageComponent } from './components/adminPage/adminPage.component';
@@ -23,6 +25,8 @@ const routes: Routes = [
   {path:'adminpage/register', component: RegisterComponent},
   {path:'adminpage/search', component: SearchComponent },
   {path:'homepage',component:HomeComponent},
+  {path:"hr", component:HrService},
+  {path:"user/resetpassword", component:ResetPassCompomnent},
   {path:'', redirectTo:'/homepage', pathMatch: 'full'}
   ];
 
