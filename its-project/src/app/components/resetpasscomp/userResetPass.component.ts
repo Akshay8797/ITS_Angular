@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ResetPasswordService } from '../services/userResetPass.service';
+import { ResetPasswordService } from '../../services/userResetPass.service';
 import { HttpParams } from '@angular/common/http';
 
 @Component({

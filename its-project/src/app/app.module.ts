@@ -21,17 +21,14 @@ import { UserComponent } from './components/login_new/user.component';
 import { TechPanelRatingComponent } from './components/techPanelComponent/techPanelRating.component';
 import { TechPaneInterviewComponent } from './components/techPanelComponent/techPanelInterview.component';
 import { TechPanelResultComponent } from './components/techPanelComponent/techPanelResult.component';
-import{ TechPanelHomePageComponent }from './components/tech-panel-home-page/tech-panel-home-page.component';
+import { TechPanelHomePageComponent }from './components/tech-panel-home-page/tech-panel-home-page.component';
 
-import { HRCandidateService } from './Services/hr.services';
 import { HRRatingComponent } from './Components/hrPanelComponents/hrRating.components';
 import { HRCandidateComponent } from './Components/hrPanelComponents/hrCandidateList.components';
 import { HRResultComponent } from './Components/hrPanelComponents/hrResultList.components';
 import { HrPanelHomePageComponent } from './Components/hr-panel-home-page/hr-panel-home-page.component';
-
-
-
-
+import { HrComponent } from './components/hrcomp/hrCandidates.component';
+import { ResetPassCompomnent } from './components/resetpasscomp/userResetPass.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +40,7 @@ import { HrPanelHomePageComponent } from './Components/hr-panel-home-page/hr-pan
     ScheduleHrinterviewComponent, GetRatingsComponent,
     RegisterComponent,SearchComponent,
     UserComponent,TechPaneInterviewComponent,TechPanelRatingComponent,TechPanelResultComponent,TechPanelHomePageComponent,
-    HRRatingComponent,HRCandidateComponent,HRResultComponent, HrPanelHomePageComponent
+    HRRatingComponent,HRCandidateComponent,HRResultComponent, HrPanelHomePageComponent, HrComponent, ResetPassCompomnent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +50,7 @@ import { HrPanelHomePageComponent } from './Components/hr-panel-home-page/hr-pan
     AppRoutingModule
   ],
   exports: [RouterModule],
-  providers: [GetFreeTechPanelService,HRCandidateService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

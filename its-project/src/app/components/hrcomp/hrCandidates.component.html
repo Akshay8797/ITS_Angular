@@ -44,44 +44,60 @@
 </head>
 
 <body>
-        <div class="wrapper">
-            <!-- Sidebar  -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Administrator</h3>
-                </div>
 
-                <ul class="list-unstyled components">
-                    <p>Options</p>
-                    <li>
-                        <a routerLink="/adminpage/homepage" routerLinkActive>Home</a>
-                    </li>
-                </ul>
-
-            </nav>
-            <div class="conatiner col-md-6 offset-3">
-                <div>
-                    <br>
-                    <h3>User Reset Password</h3>
-                    <br>
-                </div>
-                <form #resetForm="ngForm" (ngSubmit)="onSubmit(resetForm.value)" method="post">
-                    <div class="form-group row">
-                        <label>Enter User-Id</label>
-                        <input type="text" class="form-control" [(ngModel)]="userId" name="userId">
-                    </div>
-                    <div class="form-group row">
-                        <label>Enter Current Password</label>
-                        <input type="password" class="form-control" [(ngModel)]="curPassword" name="curPassword">
-                    </div>
-                    <div class="form-group row">
-                        <label>Enter New Password</label>
-                        <input type="password" class="form-control" [(ngModel)]="newPassword" name="newPassword">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Reset Password</button>
-                </form>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Administrator</h3>
             </div>
+
+            <ul class="list-unstyled components">
+                <p>Options</p>
+                <li>
+                    <a routerLink="/adminpage/homepage" routerLinkActive>Home</a>
+                </li>
+                <li>
+                    <a routerLink="/user/resetpassword" routerLinkActive="active">Reset Password</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <div class="col-md-9 offset-2">
+            <br>
+            <h3> Candidates for HR Round : </h3>
+            <br><br>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Interview-Id</th>
+                        <th>Subject</th>
+                        <th>Interview Date</th>
+                        <th>Interview Time</th>
+                        <th>Tech Rating</th>
+                        <th>Hr Interview Date</th>
+                        <th>Hr Interview Time</th>
+                        <th>Hr Rating</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let val of HrCandidates">
+                        <td>{{val.interviewId}}</td>
+                        <td>{{val.subject}}</td>
+                        <td>{{val.interviewDate}}</td>
+                        <td>{{val.interviewTime}}</td>
+                        <td>{{val.techRating}}</td>
+                        <td>{{val.empHRInterviewDate}}</td>
+                        <td>{{val.empHRInterviewTime}}</td>
+                        <td>{{val.empHRRating}}</td>
+                        <td>{{val.result}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+    </div>
 </body>
 
 </html>
