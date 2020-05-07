@@ -7,7 +7,7 @@ import { UserService } from 'src/app/services/login.service';
   styleUrls: ['./tech-panel-home-page.component.css']
 })
 export class TechPanelHomePageComponent implements OnInit {
-
+  public userService: UserService;
   constructor() { }
 
   ngOnInit(): void {
