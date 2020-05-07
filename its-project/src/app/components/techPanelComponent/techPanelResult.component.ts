@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import{TechPanelService}from 'src/app/services/techPanel.services';
 import{OnInit} from '@angular/core';
+import { UserService } from 'src/app/services/login.service';
 @Component({
     selector: 'techPanelResult',
     templateUrl: './techPanelResultList.html',
@@ -16,5 +17,9 @@ export class TechPanelResultComponent implements OnInit{
             (response)=>{this.finalResultList=response; console.log('Recieved Interview Result List :', response);}
         );
     }
+  OnClick(){
+      this.userService.removeSessionId(sessionStorage.getItem('sessionId')).subscribe((response)=>{console.log(response)});
+      sessionStorage.removeItem('sessionId');
+      }
   
 }
