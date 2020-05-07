@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import{TechPanelService}from 'src/app/services/techPanel.services';
+import { UserService } from 'src/app/services/login.service';
 
 @Component({
     selector: 'techPanelRating',
@@ -15,5 +16,9 @@ export class TechPanelRatingComponent{
         this.techPanelService.giveTechRating(techForm.id,{"techRating":techForm.tRating,"subject": techForm.subject}).subscribe(
             (response)=>{console.log('Rating Given:', response);alert(JSON.stringify(response))}
         );
-    }   
+    } 
+  OnClick(){
+      this.userService.removeSessionId(sessionStorage.getItem('sessionId')).subscribe((response)=>{console.log(response)});
+      sessionStorage.removeItem('sessionId');
+      }
 }
