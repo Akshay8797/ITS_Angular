@@ -78,7 +78,7 @@ this.id=response;
       "emailId":emailid.value
       },this.id).subscribe((response)=>
       console.log("added",response));
-      alert("Candidate Detils Added");
+      alert("Candidate Details Added");
      this.router.navigateByUrl('/homepage');
   }
   onClickCancel()
