@@ -281,7 +281,7 @@ designation,noticeperiod,location,sharedetails,primaryskills,secondaryskills)" c
 
 
        <button [disabled]="!adForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
-       <button style="margin-left: 100px;" type="Cancel" class="btn btn-danger">Cancel</button>
+       <button style="margin-left: 100px;" type="Cancel" (click)="onClickCancel()"  class="btn btn-danger">Cancel</button>
      </form>
      </div>
 </section>
@@ -404,7 +404,7 @@ designation,noticeperiod,location,sharedetails,primaryskills,secondaryskills)" c
 
 
        <button [disabled]="!adForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
-       <button style="margin-left: 100px;" type="Cancel" class="btn btn-danger">Cancel</button>
+       <button style="margin-left: 100px;" type="Cancel" (click)="onClickCancel()" class="btn btn-danger">Cancel</button>
      </form>
      </div>
 
