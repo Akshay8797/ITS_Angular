@@ -1,12 +1,110 @@
+<!--
+
 <p>admin works!</p>
 <div>
-    <label for=techPanel>
-        Select Technical Panel
+    <label for="share">
+        Select to share details : <br>
     </label>
-    <select id=techPanel (change)="OnTechSelect(techid)" [(ngModel)]="techid">
+    <select id=share (change)="OnTechShare(id)" [(ngModel)]="id">
         <option >--Select Panel--</option>
-        <option *ngFor="let element of freePanel;" [ngValue]="element.techId">
-            {{element.techName}}
+        <option *ngFor="let element of detailsNumber;" [ngValue]="element.id" >
+            {{element.name}}
         </option>
     </select>
 </div>
+
+<div>
+    <label for=hrPanel>
+        Select Hr Panel
+    </label>
+    <select id=hrPanel (change)="OnHrSelect(hrId)" [(ngModel)]="hrId">
+        <option >--Select Panel--</option>
+        <option *ngFor="let element of freePanelHr;" [ngValue]="element.empHrId">
+            {{element.empHrName}}
+        </option>
+    </select>
+</div>
+
+<div>
+    <label for=Candidate>
+        Eligible Candidate For HR by InterviewId
+    </label>
+    <select id=candidate (change)="OnCandidateSelect(interviewId)" [(ngModel)]="interviewId">
+        <option >--Select Candidate--</option>
+        <option *ngFor="let element of eligibleCandidate;" [ngValue]="element">
+            {{element}}
+        </option>
+    </select>
+</div>
+
+<div>
+
+    <button (click)="OnSelectTechRating()">GetTechRating</button>
+    <button (click)="OnSelectHrRating()">GetHrRating</button>
+
+</div>
+<div>
+    <label for=Result>
+        Set Result
+    </label>
+    <select id=Result (change)="OnSelectResult(result)" [(ngModel)]="result">
+        <option >--Select Result--</option>
+        <option *ngFor="let element of choices;" [ngValue]="element.ch">
+            {{element.ch}}
+        </option>
+    </select>
+</div>
+
+
+
+UI TESTING
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar12">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar12"> <a class="navbar-brand d-none d-md-block" href="#">
+          <b> POSTIT!</b>
+        </a>
+        <ul class="navbar-nav mx-auto"></ul>
+        <ul class="navbar-nav">
+          <li class="nav-item"> <a class="nav-link text-info" href="#">Home</a> </li>
+          <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+          <li class="nav-item" > <a class="nav-link text-info" href="#">Log in</a> </li>
+          <li class="nav-item"> <a class="nav-link text-info" href="#">Register</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+<div class="table-wrapper-scroll-y my-custom-scrollbar vertical-center">
+    
+    <table class="table table-bordered table-striped  mt-5">
+      <thead class="thead-dark text-center">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let panel of  freePanel">
+          <td>{{panel.techId}}</td>
+          <td>{{panel.subjects}}</td>
+          <td>{{panel.techName}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
+   -->
+
+<!-- The sidebar -->
+
+<!--<admin-page></admin-page>-->
+<!--<schedule-tech></schedule-tech>-->

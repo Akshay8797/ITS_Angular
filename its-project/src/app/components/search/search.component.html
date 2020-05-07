@@ -1,0 +1,71 @@
+
+<form style="margin-top: 40px;" #userForm="ngForm" (ngSubmit)="onSubmit(experience,qualification,
+primaryskills)" class="alignRight col-md-6 offset-md-6" novalidate>
+<h1>Search Candidate</h1>
+<div class="form-group">
+    <label>Skill</label>
+    
+    <select class="form-control" name="primaryskills" #primaryskills ng-minlength=5>
+      <label>Select an option</label>
+      
+      <option [value]="ps" *ngFor="let ps of PrimarySkills;" >
+        {{ps}}
+      </option>
+    </select>
+
+  </div>
+  
+    <div class="form-group">
+        <label>Qualification</label>
+             <select class="form-control" name="Qualification" #qualification>
+          <label>Select an option</label>
+          <option [value]="ss" *ngFor="let ss of Qualification;">
+            {{ss}}
+          </option>
+        </select>
+        </div>
+        <div class="form-group">
+            <label>Experience</label>
+             <input type="number" #experience  class="form-control" placeholder="Experience" > 
+           </div>
+
+    <div class="form-group">
+        <button class="btn btn-danger btn-block" >Submit</button>
+      </div>
+</form>
+      
+    
+<div class="col-md-3 offset-md-4">
+
+
+</div>
+
+<div class="col-md-5 offset-md-2" style="align-items: center;">
+    <br>
+    <h3>Shortlisted Candidates: </h3>
+    <br>
+    <table class="table table-bordered table-hover">
+      <div class='table-responsive'>  
+   
+        <thead>  
+            <tr>  
+                <th>CandidateId</th>  
+                <th>PrimarySkills</th>
+                <th>SecondarySkills</th>  
+                <th>Qualification</th>  
+                <th>Experience</th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+            <tr *ngFor="let obj of Candidates;">  
+                <td>{{obj.candidateId}}</td>  
+                <td>{{obj.primarySkills}}</td>
+                <td>{{obj.secondarySkills}}</td>
+                <td >{{obj.qualification}}</td>  
+                <td>{{obj.experience}}</td>  
+            </tr>  
+        </tbody> 
+      </div> 
+    </table>  
+   
+</div>

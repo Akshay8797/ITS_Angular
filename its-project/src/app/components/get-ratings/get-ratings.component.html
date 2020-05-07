@@ -1,0 +1,39 @@
+<div class="detail vertical-center text-center">
+    <h2 >Details of all the candidates for <br>scheduling Hr Interview. </h2>
+  </div>
+  
+  <div class="table-wrapper-scroll-y my-custom-scrollbar vertical-center demo">
+      <table class="table table-bordered table-striped  mt-5">
+        <thead class="thead-dark text-center">
+          <tr>
+            <th scope="col">Interview ID</th>
+            <th scope="col">Get Ratings</th>
+           </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let interviewId of  eligibleCandidate">
+            <td>{{interviewId}}</td>
+            <td class="text-center"><button class="btn btn-dark" (click)=OnSelectedCandidate(interviewId)>Get Ratings</button></td>
+          </tr>
+        </tbody>
+      </table>
+    
+    </div>
+
+    <div *ngIf="rating==true" class="detail vertical-center text-center"> Tech Rating:{{ratingsBoth.TechRating}} Hr Rating:{{ratingsBoth.HrRating}} <button class="btn btn-dark" (click)="setResult()">Set Result</button></div>
+    
+    <div *ngIf="result==true" class="detail vertical-center text-center"> 
+        <label for=Result>
+            Set Result
+        </label>
+        <select id=Result (change)="OnSelectResult(result)" [(ngModel)]="result">
+            <option >--Select Result--</option>
+            <option *ngFor="let element of choices;" [ngValue]="element.ch">
+                {{element.ch}}
+            </option>
+        </select>
+    </div>
+    <div *ngIf="successDisplay==true" class="detail vertical-center text-center"> Result submitted</div>
+    
+    <router-outlet></router-outlet>
+

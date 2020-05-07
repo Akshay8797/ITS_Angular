@@ -9,27 +9,39 @@ import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service
 })
 export class AdminComponent {
 
-  public freePanel;
+  
+  public eligibleCandidate;
   public freePanelHr;
-  public techid;
+  public hrId;
   public dummy;
+  public dummy2;
+  public interviewId;
+  public techRating;
+  public hrRating;
+  
+  public techPanelSelected;
+  public detailsNumber =[{'id':0 ,'name':"None"},
+                         {'id':1 , 'name':"Technical Panel"},
+                         {'id':2 , 'name':"HR Panel"},
+                         {'id':3 , 'name':"Both"}];
+  public id;
+  public detailsSharedWith;
 
   constructor(private getFreeTechPanelService: GetFreeTechPanelService) 
   { 
-    getFreeTechPanelService.getTechPanel().subscribe((response)=> {
-      this.freePanel=response;
-      console.log("Received : ",this.freePanel);
-    })
-    getFreeTechPanelService.getHrPanel().subscribe((response)=> {
-      this.freePanelHr=response;
-      console.log("Received : ",this.freePanelHr);})     
+    
+          
 }
 
-OnTechSelect(techid){
-  this.getFreeTechPanelService.sendtoTech(techid).subscribe((response)=>{
-      this.dummy=response;
-      console.log("Received : ",this.dummy);
-  });
+OnCandidateSelect(interviewID){
+  this.interviewId=interviewID;
 }
 
+
+OnSelectResult(result){
+  this.getFreeTechPanelService.setResult(5,result).subscribe((response)=>{
+    this.dummy2=response;
+    console.log("Set result: ",this.dummy2);
+});
+}
 }
