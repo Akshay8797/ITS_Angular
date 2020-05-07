@@ -12,6 +12,10 @@ import { GetRatingsComponent } from './components/get-ratings/get-ratings.compon
 import { RegisterComponent } from './components/registration/registration.component'
 import { SearchComponent } from './components/search/search.component';
 import { UserComponent } from './components/login_new/user.component';
+import { TechPanelHomePageComponent } from './components/tech-panel-home-page/tech-panel-home-page.component';
+import { TechPanelRatingComponent } from './components/techPanelComponent/techPanelRating.component';
+import { TechPaneInterviewComponent } from './components/techPanelComponent/techPanelInterview.component';
+import { TechPanelResultComponent } from './components/techPanelComponent/techPanelResult.component';
 
 
 const routes: Routes = [
@@ -26,6 +30,10 @@ const routes: Routes = [
   {path:'adminpage/homepage',component:HomeComponent},
   {path:'login',component:UserComponent},
   {path:'', redirectTo:'/login', pathMatch: 'full'},
+  {path: "techPanelHomePage", component:TechPanelHomePageComponent},
+  {path: 'techPanelHomePage/techPanelInterviewList', component: TechPaneInterviewComponent},
+  {path: 'techPanelHomePage/techPanelRating', component: TechPanelRatingComponent},
+  {path: 'techPanelHomePage/techPanelResult', component: TechPanelResultComponent}
   ];
 
 @NgModule({
