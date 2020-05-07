@@ -9,7 +9,8 @@ import { UserService } from 'src/app/services/login.service';
     providers:[TechPanelService]
 })
 export class TechPanelResultComponent implements OnInit{
-    public finalResultList:any;
+  public userService: UserService;  
+  public finalResultList:any;
     constructor(private techPanelService:TechPanelService){     
     } 
     ngOnInit() {
