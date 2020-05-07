@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service'
 import { UserService } from 'src/app/services/login.service';
+import {Router} from '@angular/router';
+
 
 
 @Component({
@@ -27,7 +29,7 @@ export class RegisterComponent {
   public getRegistrationservice;
   public submit:boolean=false;
   
-  constructor(private getFreeTechPanelService: GetFreeTechPanelService,private userService:UserService) 
+  constructor(private getFreeTechPanelService: GetFreeTechPanelService,private userService:UserService, private router:Router) 
   {
     
     this.getRegistrationservice=getFreeTechPanelService;
@@ -76,9 +78,13 @@ this.id=response;
       "emailId":emailid.value
       },this.id).subscribe((response)=>
       console.log("added",response));
-      alert("Candidate Detils Added")
+      alert("Candidate Detils Added");
+     this.router.navigateByUrl('/homepage');
   }
-
+  onClickCancel()
+    {
+      this.router.navigateByUrl('/homepage');
+    }
 
 
 OnClick(){
