@@ -44,7 +44,7 @@ export class UserComponent {
           this.router.navigateByUrl('adminpage/homepage');
         }
         else if(this.returnedObject!= "failed" && this.sharedValue== "1"){
-          this.router.navigate(['/adminpageTech']);
+          this.router.navigate(['/techPanelHomePage']);
         }
         else if(this.returnedObject!= "failed" && this.sharedValue== "2"){
           this.router.navigate(['/hrpage']);
