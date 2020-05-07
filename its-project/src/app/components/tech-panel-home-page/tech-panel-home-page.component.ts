@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/login.service';
+import{TechPanelService}from 'src/app/services/techPanel.services';
 
 @Component({
   selector: 'techPanelHomePage',
