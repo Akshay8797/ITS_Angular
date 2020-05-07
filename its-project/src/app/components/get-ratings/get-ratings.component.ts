@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service'
+import { UserService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-get-ratings',
@@ -8,7 +9,7 @@ import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service
 })
 export class GetRatingsComponent implements OnInit {
 
-  constructor(private getFreeTechPanelService: GetFreeTechPanelService) { 
+  constructor(private getFreeTechPanelService: GetFreeTechPanelService,private userService:UserService) { 
     
     getFreeTechPanelService.getAllRatedCandidates().subscribe ((response)=> {
       this.eligibleCandidate=response; 
@@ -41,8 +42,10 @@ export class GetRatingsComponent implements OnInit {
       console.log("Set result: ",this.responseSetResult);
   });  }
   
-  
-  
+  OnClick(){
+    this.userService.removeSessionId(sessionStorage.getItem('sessionId')).subscribe((response)=>{console.log(response)});
+    sessionStorage.removeItem('sessionId');
+    }
 
   ngOnInit(): void {
   }

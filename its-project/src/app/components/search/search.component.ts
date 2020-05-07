@@ -1,11 +1,12 @@
 
 import { Component } from '@angular/core';
 import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service'
+import { UserService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'search',
   templateUrl: './search.component.html',
-  //styleUrls: ['./app.component.css']
+  styleUrls: ['./search.component.css'],
   providers: [ GetFreeTechPanelService ]
 
 })
@@ -28,7 +29,7 @@ export class SearchComponent
           
       }
   ];
-  constructor(private getFreeTechPanelService: GetFreeTechPanelService) 
+  constructor(private getFreeTechPanelService: GetFreeTechPanelService,private userService:UserService) 
   {
     
     this.getRegistrationservice=getFreeTechPanelService;
@@ -50,6 +51,10 @@ export class SearchComponent
       });
     }
 
+    OnClick(){
+      this.userService.removeSessionId(sessionStorage.getItem('sessionId')).subscribe((response)=>{console.log(response)});
+      localStorage.removeItem('sessionId');
+    }
     
       
 }

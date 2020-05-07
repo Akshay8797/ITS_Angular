@@ -36,29 +36,32 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+                <h3>Administrator</h3>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Options</p>
                 <li>
-                    <a routerLink="homepage" routerLinkActive>Home</a>
+                    <a routerLink="/adminpage/homepage" routerLinkActive>Home</a>
                 </li>
                 <li>
-                    <a routerLink="adminpage/register" routerLinkActive="active">Add Candidate</a>
+                    <a routerLink="/adminpage/register" routerLinkActive="active">Add Candidate</a>
                 </li>
                 <li>
-                    <a routerLink="adminpage/search" routerLinkActive="active">Search Candidate</a>
+                    <a routerLink="/adminpage/search" routerLinkActive="active">Search Candidate</a>
                 </li>
                 <li>
-                    <a routerLink="adminpage/table" routerLinkActive="active">Schedule Technical Interview</a>
+                    <a routerLink="/adminpage/table" routerLinkActive="active">Schedule Technical Interview</a>
                     
                 </li>
                 <li>
-                    <a  routerLink="adminpage/tableHr" routerLinkActive="active">Schedule HR Interview</a>
+                    <a  routerLink="/adminpage/tableHr" routerLinkActive="active">Schedule HR Interview</a>
                 </li>
                 <li>
-                    <a  routerLink="adminpage/ratings" routerLinkActive="active">Ratings and set Result</a>
+                    <a  routerLink="/adminpage/ratings" routerLinkActive="active">Ratings and set Result</a>
+                </li>
+                <li>
+                    <a  routerLink="/login" routerLinkActive="active" (click)=OnClick()>Logout</a>
                 </li>
                 
             </ul>

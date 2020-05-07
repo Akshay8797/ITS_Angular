@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service'
+import { UserService } from 'src/app/services/login.service';
+
 export class User {
   
   public experience: Number;
@@ -21,7 +23,6 @@ export class User {
   public mobilenumber: string;
   public email: string;
 }
-
 @Component({
   selector: 'register',
   templateUrl: './registration.component.html',
@@ -35,7 +36,7 @@ export class RegisterComponent {
   public id;
   mobNumberPattern = "^((\\+91-?)|0)?[0-9]{10}$"
   pincode1="^((\\+91-?)|0)?[0-9]{6}$"
-  model = new User();
+ 
   
   PrimarySkills= ['C','JAVA','PYTHON','JS'];
  SecondarySkills= ['C', 'JAVA','PYTHON','JS'];
@@ -46,7 +47,7 @@ export class RegisterComponent {
   public getRegistrationservice;
   public submit:boolean=false;
   
-  constructor(private getFreeTechPanelService: GetFreeTechPanelService) 
+  constructor(private getFreeTechPanelService: GetFreeTechPanelService,private userService:UserService) 
   {
     
     this.getRegistrationservice=getFreeTechPanelService;
@@ -95,10 +96,16 @@ this.id=response;
       "emailId":emailid.value
       },this.id).subscribe((response)=>
       console.log("added",response));
+      alert("Candidate Detils Added")
   }
 
 onSelectSubmit()
 {
   this.submit=true;
+}
+
+OnClick(){
+  this.userService.removeSessionId(localStorage.getItem('sessionId')).subscribe((response)=>{console.log(response)});
+  localStorage.removeItem('sessionId');
 }
 }

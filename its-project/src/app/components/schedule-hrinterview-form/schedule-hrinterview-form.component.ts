@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service';
 import { ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/services/login.service'
 
 
 
@@ -18,7 +19,7 @@ export class ScheduleHrinterviewFormComponent {
   public shareValue;
   public shareResponse;
   public interviewId;
-  constructor(private getFreeTechPanelService: GetFreeTechPanelService,private activatedRoute: ActivatedRoute){
+  constructor(private getFreeTechPanelService: GetFreeTechPanelService,private activatedRoute: ActivatedRoute,private userService:UserService){
   }
   OnHrInterviewSchedule(id,date,time){
     this.getFreeTechPanelService.sendtoHr(id,date,time,this.hrId).subscribe((response)=>{
@@ -40,6 +41,11 @@ export class ScheduleHrinterviewFormComponent {
       this.shareResponse=response;
       console.log("Received : ",this.shareResponse);
     })
+  }
+
+  OnClick(){
+    this.userService.removeSessionId(sessionStorage.getItem('sessionId')).subscribe((response)=>{console.log(response)});
+    sessionStorage.removeItem('sessionId');
   }
 
   ngOnInit() {

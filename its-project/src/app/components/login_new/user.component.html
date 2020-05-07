@@ -1,31 +1,60 @@
-<div class="card"id="formContent">
-    <div class="wrapper">    
-    <h4 class="card-header">ITS Login</h4>
-        <div class="card-body">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                        <div *ngIf="f.username.errors.required">Username is required</div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                        <div *ngIf="f.password.errors.required">Password is required</div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button [disabled]="loading" class="btn btn-primary">
-                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                        Login
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
-<app-logout  hidden></app-logout>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrap Project</title>
+	<!-- JQuery API -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<!-- Icons -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<!-- Bootstrap css framework -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Bootstrap JavaScript -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+	<div class="container" >
+	<div class="row justify-content-center text-center" >
+        <div class="col-md-6">
+          <h1 class="" style="font-family:courier; margin-top: 70px;" >Log In</h1>
+        </div>
+      </div>
+		<div class="row justify-content-center ">
+		
+			<div class="col-md-4 rounded border border-dark" style="padding: 20px;  margin-top: 10px;"  id="check" >
+				<div class="form-group">
+		    		<label >UserId :</label>
+		    		<input type="text" class="form-control " placeholder="Enter UserID" #userid >
+		  		</div>
+
+		  		<div class="form-group">
+		   			<label >Password:</label>
+		    		<input type="password" class="form-control " placeholder="Enter Password" #password>
+		  		</div>
+          <div>
+            <label  for=ShareDeatails>
+                User type
+            </label>
+            <select class="form-control" id=techPanel aria-placeholder="select" [(ngModel)]="sharedValue">
+                <option >--Select User Type--</option>
+                <option [ngValue]="0">
+                  Admin
+                </option>
+                <option [ngValue]="1">
+                  Tech
+                </option>
+                <option [ngValue]="2">
+                  HR
+                </option>
+            </select><br>
+            <button  class="btn btn-primary" (click)=onSubmit(userid.value,password.value)>
+                Login
+            </button><div *ngIf="loginFail==true">Login Failed!Try again!</div>
+        </div>
+			</div>
+		</div>
+  </div>
+  
+</body>
+</html>

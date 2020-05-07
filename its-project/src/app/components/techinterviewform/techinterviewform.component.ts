@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service';
 import { ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/services/login.service';
+
 
 @Component({
   selector: 'tech-form',
@@ -16,7 +18,7 @@ export class TechInterviewComponent{
   public freePanel;
   public shareValue;
   public candidateId;
-  constructor(private getFreeTechPanelService: GetFreeTechPanelService,private activatedRoute: ActivatedRoute){
+  constructor(private getFreeTechPanelService: GetFreeTechPanelService,private activatedRoute: ActivatedRoute,private userService:UserService){
   }
   OnTechInterviewSchedule(id,date,time,subject,){
     this.getFreeTechPanelService.sendtoTech(id,date,time,this.techid,subject).subscribe((response)=>{
@@ -38,6 +40,12 @@ export class TechInterviewComponent{
       console.log("Received : ",this.freePanel);
     })
   }
+
+  OnClick(){
+    this.userService.removeSessionId(sessionStorage.getItem('sessionId')).subscribe((response)=>{console.log(response)});
+    sessionStorage.removeItem('sessionId');
+  }
+    
 
   ngOnInit() {
     this.candidateId =

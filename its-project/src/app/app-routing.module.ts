@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HrService } from './components/hrCandidates.component';
-import { ResetPassCompomnent } from './components/userResetPass.component';
 
 
 import { AdminPageComponent } from './components/adminPage/adminPage.component';
@@ -13,6 +11,7 @@ import { ScheduleHrinterviewFormComponent } from './components/schedule-hrinterv
 import { GetRatingsComponent } from './components/get-ratings/get-ratings.component'
 import { RegisterComponent } from './components/registration/registration.component'
 import { SearchComponent } from './components/search/search.component';
+import { UserComponent } from './components/login_new/user.component';
 
 
 const routes: Routes = [
@@ -24,10 +23,9 @@ const routes: Routes = [
   {path:'adminpage/ratings', component: GetRatingsComponent},
   {path:'adminpage/register', component: RegisterComponent},
   {path:'adminpage/search', component: SearchComponent },
-  {path:'homepage',component:HomeComponent},
-  {path:"hr", component:HrService},
-  {path:"user/resetpassword", component:ResetPassCompomnent},
-  {path:'', redirectTo:'/homepage', pathMatch: 'full'}
+  {path:'adminpage/homepage',component:HomeComponent},
+  {path:'login',component:UserComponent},
+  {path:'', redirectTo:'/login', pathMatch: 'full'},
   ];
 
 @NgModule({
