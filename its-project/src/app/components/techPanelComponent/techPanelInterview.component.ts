@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/login.service';
     providers:[TechPanelService]
 })
 export class TechPaneInterviewComponent implements OnInit{
-    
+    public userService: UserService;
     public interviewCandidateList:any;
     constructor(private techPanelService:TechPanelService){
        
