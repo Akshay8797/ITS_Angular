@@ -16,6 +16,12 @@ import { TechPanelHomePageComponent } from './components/tech-panel-home-page/te
 import { TechPanelRatingComponent } from './components/techPanelComponent/techPanelRating.component';
 import { TechPaneInterviewComponent } from './components/techPanelComponent/techPanelInterview.component';
 import { TechPanelResultComponent } from './components/techPanelComponent/techPanelResult.component';
+/*import { HrPanelHomePageComponent } from './Components/hr-panel-home-page/hr-panel-home-page.component';
+import { HRCandidateComponent } from './Components/hrPanelComponents/hrCandidateList.components';
+import { HRRatingComponent } from './Components/hrPanelComponents/hrRating.components';
+import { HRResultComponent } from './Components/hrPanelComponents/hrResultList.components';*/
+import { HrComponent } from './components/hrcomp/hrCandidates.component';
+import { ResetPassCompomnent } from './components/resetpasscomp/userResetPass.component';
 
 
 const routes: Routes = [
@@ -33,7 +39,13 @@ const routes: Routes = [
   {path: "techPanelHomePage", component:TechPanelHomePageComponent},
   {path: 'techPanelHomePage/techPanelInterviewList', component: TechPaneInterviewComponent},
   {path: 'techPanelHomePage/techPanelRating', component: TechPanelRatingComponent},
-  {path: 'techPanelHomePage/techPanelResult', component: TechPanelResultComponent}
+  {path: 'techPanelHomePage/techPanelResult', component: TechPanelResultComponent},
+  {path:'hr',component:HrComponent},
+  /*{path:'user/resetpassword', component: ResetPassCompomnent},
+  {path:"hrPanelHomePage", component: HrPanelHomePageComponent },
+  {path: "hrPanelHomePage/hrCandidateList", component: HRCandidateComponent},
+  {path: "hrPanelHomePage/hrRatingServices", component: HRRatingComponent},
+  {path: "hrPanelHomePage/hrResultList", component: HRResultComponent}*/
   ];
 
 @NgModule({

@@ -3,7 +3,8 @@ import { HrCandidateService } from 'src/app/services/hrCandidates.service';
 
 @Component({
     selector: 'hrPanel',
-    templateUrl: './hrCandidate.component.html',
+    templateUrl: './hrCandidates.component.html',
+    styleUrls: ['./hrCandidates.component.css'],
     providers: [HrCandidateService]
 })
 export class HrComponent {
