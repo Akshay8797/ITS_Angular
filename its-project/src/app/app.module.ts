@@ -21,8 +21,7 @@ import { TechPanelRatingComponent } from './components/techPanelComponent/techPa
 import { TechPaneInterviewComponent } from './components/techPanelComponent/techPanelInterview.component';
 import { TechPanelResultComponent } from './components/techPanelComponent/techPanelResult.component';
 import{TechPanelHomePageComponent}from './components/tech-panel-home-page/tech-panel-home-page.component';
-
-
+import { TechPanelService } from './services/techPanel.services';
 
 
 @NgModule({
@@ -44,7 +43,7 @@ import{TechPanelHomePageComponent}from './components/tech-panel-home-page/tech-p
     AppRoutingModule
   ],
   exports: [RouterModule],
-  providers: [GetFreeTechPanelService],
+  providers: [GetFreeTechPanelService,TechPanelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,7 @@ import { UserService } from 'src/app/services/login.service';
     providers:[TechPanelService]
 })
 export class TechPanelRatingComponent{
+    public userService: UserService;
     constructor(private techPanelService:TechPanelService){  
     }
     onSubmit(techForm:any){

@@ -31,9 +31,9 @@ export class UserService {
   }
      
    generateUserHomepage(userid:string,password:string,sharedValue:string):Observable<Object>{
-      return this.http.post('http://localhost:8080/user/login' ,{},
+      return this.http.post('http://localhost:8080/user/login' ,{'userid':userid,'password':password,'userType':sharedValue},
       {headers:this.httpHeaders,responseType:"text",params:
-      {'userId':userid,'password':password,'userType':sharedValue}}).pipe(catchError(this.handleError));
+      {}}).pipe(catchError(this.handleError));
       ;
       
     }
@@ -46,7 +46,7 @@ export class UserService {
 
   removeSessionId(sessionId):Observable<Object>{
 
-    return this.http.post('http://localhost:8080/user/logout' ,{},{headers:this.httpHeaders.set('auth-token',sessionId),responseType: 'text'});
+    return this.http.post('http://localhost:8083/user/logout' ,{},{headers:this.httpHeaders.set('auth-token',sessionId),responseType: 'text'});
   
   }
   
