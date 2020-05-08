@@ -23,14 +23,13 @@
                 <a routerLink="/hrPanelHomePage/hrResultList" routerLinkActive="active">View Final Results</a>
             </li>
             <li>
-                <a  routerLink="/login" routerLinkActive="active">Logout</a>
+                <a  routerLink="/login" routerLinkActive="active" (click)=OnClick()>Logout</a>
             </li>
         </ul>
     </nav>
     
 </div>
-
-        
+       
 <form #hrRatingForm="ngForm" (ngSubmit)="onSubmit(hrRatingForm.value)" class="col-md-4 offset-md-4" novalidate>
     <h1>HR Panel : </h1><br>
     <div class="form-group">

@@ -79,11 +79,11 @@ this.id=response;
       },this.id).subscribe((response)=>
       console.log("added",response));
       alert("Candidate Details Added");
-     this.router.navigateByUrl('/homepage');
+     this.router.navigateByUrl('/adminpage/homepage');
   }
   onClickCancel()
     {
-      this.router.navigateByUrl('/homepage');
+      this.router.navigateByUrl('/adminpage/homepage');
     }
 
 

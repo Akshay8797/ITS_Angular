@@ -71,341 +71,230 @@
             <p>Body goes here</p>
         
     </div>
-    
    
-</body>
-<section id="candidate" style="margin-top: 0px; margin-bottom: 20px;">
-  <div class="section-inner">
-<form #adForm="ngForm" (ngSubmit)="onSubmit(experience,qualification,
-designation,noticeperiod,location,sharedetails,primaryskills,secondaryskills)" class="alignRight col-md-6 offset-md-6" novalidate>
-             <h2>Registration Form</h2>
-
-<div class="form-group">
-  <label>Select a primary skill</label>
-  <select class="form-control" name="primaryskills" placeholder="enter primarySkills" #primaryskills="ngModel" required ngModel>
-    <label>Select an option</label>
-    <option [value]="ss" *ngFor="let ss of PrimarySkills;">
-      {{ss}}
-    </option>
-    <div *ngIf="primaryskills.errors && primaryskills.touched" class="alert alert-danger">
-    <div [hidden]="!primaryskills.errors.required" class="alert alert-danger">
-      Please Select a Skill
-      </div>
-    </div>>
-  </select>
-</div>
-
-
-<div class="form-group">
-  <label>Select a Secondary skill</label>
-  <select class="form-control" name="secondaryskills" placeholder="enter category" #secondaryskills="ngModel" required ngModel>
-    <label>Select an option</label>
-    <option [value]="ss" *ngFor="let ss of SecondarySkills;">
-      {{ss}}
-    </option>
-    <div *ngIf="secondaryskills.errors && secondaryskills.touched" class="alert alert-danger">
-    <div [hidden]="!secondaryskills.errors.required" class="alert alert-danger">
-      Please Select a Skill
+    <section id="candidate" style="margin-top: 0px; margin-bottom: 20px;">
+      <div class="section-inner">
+    <form #adForm="ngForm" (ngSubmit)="onSubmit(experience,qualification,
+    designation,noticeperiod,location,sharedetails,primaryskills,secondaryskills)" class="alignRight col-md-6 offset-md-6" novalidate>
+                 <h2>Registration Form</h2>
+    
+    <div class="form-group">
+      <label>Select a primary skill</label>
+      <select class="form-control" name="primaryskills" placeholder="enter primarySkills" #primaryskills="ngModel" required ngModel>
+        <label>Select an option</label>
+        <option [value]="ss" *ngFor="let ss of PrimarySkills;">
+          {{ss}}
+        </option>
+        <div *ngIf="primaryskills.errors && primaryskills.touched" class="alert alert-danger">
+        <div [hidden]="!primaryskills.errors.required" class="alert alert-danger">
+          Please Select a Skill
+          </div>
+        </div>>
+      </select>
+    </div>
+    
+    
+    <div class="form-group">
+      <label>Select a Secondary skill</label>
+      <select class="form-control" name="secondaryskills" placeholder="enter category" #secondaryskills="ngModel" required ngModel>
+        <label>Select an option</label>
+        <option [value]="ss" *ngFor="let ss of SecondarySkills;">
+          {{ss}}
+        </option>
+        <div *ngIf="secondaryskills.errors && secondaryskills.touched" class="alert alert-danger">
+        <div [hidden]="!secondaryskills.errors.required" class="alert alert-danger">
+          Please Select a Skill
+          </div>
+        </div>
+      </select>
+    </div>
+    <div class="form-group">
+      <input type='experience' name="experience" class="form-control" placeholder="Enter Experience" #experience="ngModel" required ngModel>
+      <div *ngIf="experience.errors && experience.touched" class="alert alert-danger">
+          <div [hidden]="!experience.errors.required" class="alert alert-danger">
+          Please Enter Experience
+          </div>
       </div>
     </div>
-  </select>
-</div>
-<div class="form-group">
-  <input type='experience' name="experience" class="form-control" placeholder="Enter Experience" #experience="ngModel" required ngModel>
-  <div *ngIf="experience.errors && experience.touched" class="alert alert-danger">
-      <div [hidden]="!experience.errors.required" class="alert alert-danger">
-      Please Enter Experience
-      </div>
-  </div>
-</div>
-
-<div class="form-group">
-   <label>Enter the qualification</label>
-  <select class="form-control" name="qualification" #qualification="ngModel" required ngModel>
     
-    <option [value]="ss" *ngFor="let ss of Qualification;">
-      {{ss}}
-    </option>
+    <div class="form-group">
+       <label>Enter the qualification</label>
+      <select class="form-control" name="qualification" #qualification="ngModel" required ngModel>
+        
+        <option [value]="ss" *ngFor="let ss of Qualification;">
+          {{ss}}
+        </option>
+        
+      </select>
+    </div>
     
-  </select>
-</div>
-
-
-<div class="form-group">
- 
-  <input type="text" class="form-control" placeholder="Enter the designation" name="designation" #designation ngModel >
-</div>
-
-<div class="form-group">
- 
-  <input type="number" class="form-control" name="noticeperiod" placeholder="Enter the noticeperiod" #noticeperiod ngModel>
-</div>
-
-<div class="form-group">
-
-  <input type="location" class="form-control" name="location"placeholder=" Enter the location" #location ngModel >
-</div>
-
-<div class="form-group">
-  <label>Enter the share details</label>
-<select class="form-control" name="sharedetails" #sharedetails  >
-  <label>Select an option</label>
-  <option [value]="ss" *ngFor="let ss of ShareDetails;">
-    {{ss}}
-  </option>
-</select>
-</div>
-
-<div class="buttons" *ngIf="submit==false">
-     <button [disabled]="!adForm.form.valid" type="submit" class="btn btn-primary">Next</button>
-
-   <button style="margin-left: 100px;" type="Cancel" *ngIf="submit==false" class="btn btn-danger">Cancel</button>
-</div>
-
- <div class="showsection" *ngIf="submit==true">
-  <h4>Proceed To Add Profile Details</h4>
-       </div>
-
-  </form>
-</div>
-</section >
-
-
-
-
-<section id="candidetails"  *ngIf="submit" style=" border-top: 1px solid;">
-
-  
-  <div style="margin-top: 20px;" class="section-inner">
-  
-    <form aria-disabled="true"  #adForm="ngForm" (ngSubmit)="onSubmit2(firstname,
-  lastname,dob,street,city,state,pincode,mobile,
-  email,gender)" class="alignRight col-md-6 offset-md-6" novalidate>
-
-  <h2>Candidate Profile Details</h2>
-               <br>
-               <div class="form-group">
-             <input type='text' name="firstname" class="form-control" placeholder="Enter FirstName" #firstname="ngModel" required ngModel>
-             <div *ngIf="firstname.errors && firstname.touched" class="alert alert-danger">
-                 <div [hidden]="!firstname.errors.required" class="alert alert-danger">
-                 Please Enter FirstName
+    
+    <div class="form-group">
+     
+      <input type="text" class="form-control" placeholder="Enter the designation" name="designation" #designation ngModel >
+    </div>
+    
+    <div class="form-group">
+     
+      <input type="number" class="form-control" name="noticeperiod" placeholder="Enter the noticeperiod" #noticeperiod ngModel>
+    </div>
+    
+    <div class="form-group">
+    
+      <input type="location" class="form-control" name="location"placeholder=" Enter the location" #location ngModel >
+    </div>
+    
+    <div class="form-group">
+      <label>Enter the share details</label>
+    <select class="form-control" name="sharedetails" #sharedetails  >
+      <label>Select an option</label>
+      <option [value]="ss" *ngFor="let ss of ShareDetails;">
+        {{ss}}
+      </option>
+    </select>
+    </div>
+    
+    <div class="buttons" *ngIf="submit==false">
+         <button [disabled]="!adForm.form.valid" type="submit" class="btn btn-primary">Next</button>
+    
+       <button style="margin-left: 100px;" type="Cancel" *ngIf="submit==false" class="btn btn-danger">Cancel</button>
+    </div>
+    
+     <div class="showsection" *ngIf="submit==true">
+      <h4>Proceed To Add Profile Details</h4>
+           </div>
+    
+      </form>
+    </div>
+    </section >
+    
+    
+    
+    
+    <section id="candidetails"  *ngIf="submit" style=" border-top: 1px solid;">
+    
+      
+      <div style="margin-top: 20px;" class="section-inner">
+      
+        <form aria-disabled="true"  #adForm="ngForm" (ngSubmit)="onSubmit2(firstname,
+      lastname,dob,street,city,state,pincode,mobile,
+      email,gender)" class="alignRight col-md-6 offset-md-6" novalidate>
+    
+      <h2>Candidate Profile Details</h2>
+                   <br>
+                   <div class="form-group">
+                 <input type='text' name="firstname" class="form-control" placeholder="Enter FirstName" #firstname="ngModel" required ngModel>
+                 <div *ngIf="firstname.errors && firstname.touched" class="alert alert-danger">
+                     <div [hidden]="!firstname.errors.required" class="alert alert-danger">
+                     Please Enter FirstName
+                     </div>
                  </div>
              </div>
-         </div>
-         <div class="form-group">
-             <input type='text' name="lastname" class="form-control" placeholder="Enter LastName" #lastname="ngModel" required ngModel>
-             <div *ngIf="lastname.errors && lastname.touched" class="alert alert-danger">
-                 <div [hidden]="!lastname.errors.required" class="alert alert-danger">
-                 Please Enter LastName
+             <div class="form-group">
+                 <input type='text' name="lastname" class="form-control" placeholder="Enter LastName" #lastname="ngModel" required ngModel>
+                 <div *ngIf="lastname.errors && lastname.touched" class="alert alert-danger">
+                     <div [hidden]="!lastname.errors.required" class="alert alert-danger">
+                     Please Enter LastName
+                     </div>
                  </div>
              </div>
-         </div>
-         <div class="form-group">
-           <input type='date' name="dob" class="form-control" placeholder="Enter D.O.B" #dob="ngModel" required ngModel>
-           <div *ngIf="dob.errors && dob.touched" class="alert alert-danger">
-               <div [hidden]="!dob.errors.required" class="alert alert-danger">
-               Please Enter DateOfBirth
+             <div class="form-group">
+               <input type='date' name="dob" class="form-control" placeholder="Enter D.O.B" #dob="ngModel" required ngModel>
+               <div *ngIf="dob.errors && dob.touched" class="alert alert-danger">
+                   <div [hidden]="!dob.errors.required" class="alert alert-danger">
+                   Please Enter DateOfBirth
+                   </div>
                </div>
            </div>
-       </div>
-       <div class="form-group">
-         <input type='text' name="street" class="form-control" placeholder="Enter Street Name" #street="ngModel" required ngModel>
-         <div *ngIf="street.errors && street.touched" class="alert alert-danger">
-             <div [hidden]="!street.errors.required" class="alert alert-danger">
-             Please Enter Street
-             </div>
-         </div>
-       </div>
-       <div class="form-group">
-         <input type='text' name="city" class="form-control" placeholder="Enter City Name" #city="ngModel" required ngModel>
-         <div *ngIf="city.errors && city.touched" class="alert alert-danger">
-             <div [hidden]="!city.errors.required" class="alert alert-danger">
-             Please Enter City
-             </div>
-         </div>
-       </div>
-       <div class="form-group">
-         <input type='text' name="state" class="form-control" placeholder="Enter State Name" #state="ngModel" required ngModel>
-         <div *ngIf="state.errors && state.touched" class="alert alert-danger">
-             <div [hidden]="!state.errors.required" class="alert alert-danger">
-             Please Enter State
-             </div>
-         </div>
-       </div>
-       <div class="form-group">
-         <input type='number' name="Pincode" class="form-control" placeholder="Enter Pincode" #pincode="ngModel" [pattern]="pincode1" required ngModel>
-         <div *ngIf="pincode.errors && pincode.touched" class="alert alert-danger">
-             <div [hidden]="!pincode.errors.required" class="alert alert-danger">
-             Please Enter Pincode
-             </div>
-             <div [hidden]="!pincode.errors.pattern" class="alert alert-danger">
-              Pin Number should be of 6 digits!Invalid Pin
-        </div>
-         </div>
-       </div>
-       <div class="form-group">
-         <input type='number'  name="mobile" class="form-control" placeholder="Enter mobile" #mobile="ngModel" [pattern]="mobNumberPattern" required minlength="10" maxlength="10" ngModel>
-         <div *ngIf="mobile.errors && mobile.touched" class="alert alert-danger">
-             <div [hidden]="!mobile.errors.required" class="alert alert-danger">
-                  Please Enter Mobile Number
-             </div>
-              <div [hidden]="!mobile.errors.pattern" class="alert alert-danger">
-                    Number should be of 10 digits!Invalid Mobile Number
-              </div>
-              </div>
-       </div>
-       
-       <div class="form-group">
-          <label>Select a gender</label>
-         <select class="form-control" value="enter the gender" name="gender" #gender="ngModel" required ngModel>
-           <option value="none" selected disabled hidden> Choose a  gender </option>
-           <option  [value]="ss" *ngFor="let ss of Gender;">
-             {{ss}}
-           </option>
-           <div *ngIf="gender.errors && gender.touched" class="alert alert-danger">
-           <div [hidden]="!gender.errors.required" class="alert alert-danger">
-             Please Select a Gender
+           <div class="form-group">
+             <input type='text' name="street" class="form-control" placeholder="Enter Street Name" #street="ngModel" required ngModel>
+             <div *ngIf="street.errors && street.touched" class="alert alert-danger">
+                 <div [hidden]="!street.errors.required" class="alert alert-danger">
+                 Please Enter Street
+                 </div>
              </div>
            </div>
-         </select>
-       </div>
-       
-       <div class="form-group">
-         <input type='email' name="email" class="form-control" placeholder="Enter EmailId" #email="ngModel" required ngModel>
-         <div *ngIf="email.errors && email.touched" class="alert alert-danger">
-             <div [hidden]="!email.errors.required" class="alert alert-danger">
-             Please Enter Email
-             </div>
-         </div>
-       </div>
-
-
-       <button [disabled]="!adForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
-       <button style="margin-left: 100px;" type="Cancel" (click)="onClickCancel()"  class="btn btn-danger">Cancel</button>
-     </form>
-     </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div style="margin-top: 40px;" *ngIf="submit" #secondform>
-  <form #adForm="ngForm" (ngSubmit)="onSubmit2(firstname,
-  lastname,dob,street,city,state,pincode,mobile,
-  email,gender)" class="alignRight col-md-6 offset-md-6" novalidate>
-
-  <h1>Candidate Profile Details</h1>
-               <br>
-               <div class="form-group">
-             <input type='text' name="firstname" class="form-control" placeholder="Enter FirstName" #firstname="ngModel" required ngModel>
-             <div *ngIf="firstname.errors && firstname.touched" class="alert alert-danger">
-                 <div [hidden]="!firstname.errors.required" class="alert alert-danger">
-                 Please Enter FirstName
+           <div class="form-group">
+             <input type='text' name="city" class="form-control" placeholder="Enter City Name" #city="ngModel" required ngModel>
+             <div *ngIf="city.errors && city.touched" class="alert alert-danger">
+                 <div [hidden]="!city.errors.required" class="alert alert-danger">
+                 Please Enter City
                  </div>
              </div>
-         </div>
-         <div class="form-group">
-             <input type='text' name="lastname" class="form-control" placeholder="Enter LastName" #lastname="ngModel" required ngModel>
-             <div *ngIf="lastname.errors && lastname.touched" class="alert alert-danger">
-                 <div [hidden]="!lastname.errors.required" class="alert alert-danger">
-                 Please Enter LastName
+           </div>
+           <div class="form-group">
+             <input type='text' name="state" class="form-control" placeholder="Enter State Name" #state="ngModel" required ngModel>
+             <div *ngIf="state.errors && state.touched" class="alert alert-danger">
+                 <div [hidden]="!state.errors.required" class="alert alert-danger">
+                 Please Enter State
                  </div>
              </div>
-         </div>
-         <div class="form-group">
-           <input type='date' name="dob" class="form-control" placeholder="Enter D.O.B" #dob="ngModel" required ngModel>
-           <div *ngIf="dob.errors && dob.touched" class="alert alert-danger">
-               <div [hidden]="!dob.errors.required" class="alert alert-danger">
-               Please Enter DateOfBirth
+           </div>
+           <div class="form-group">
+             <input type='number' name="Pincode" class="form-control" placeholder="Enter Pincode" #pincode="ngModel" [pattern]="pincode1" required ngModel>
+             <div *ngIf="pincode.errors && pincode.touched" class="alert alert-danger">
+                 <div [hidden]="!pincode.errors.required" class="alert alert-danger">
+                 Please Enter Pincode
+                 </div>
+                 <div [hidden]="!pincode.errors.pattern" class="alert alert-danger">
+                  Pin Number should be of 6 digits!Invalid Pin
+            </div>
+             </div>
+           </div>
+           <div class="form-group">
+             <input type='number'  name="mobile" class="form-control" placeholder="Enter mobile" #mobile="ngModel" [pattern]="mobNumberPattern" required minlength="10" maxlength="10" ngModel>
+             <div *ngIf="mobile.errors && mobile.touched" class="alert alert-danger">
+                 <div [hidden]="!mobile.errors.required" class="alert alert-danger">
+                      Please Enter Mobile Number
+                 </div>
+                  <div [hidden]="!mobile.errors.pattern" class="alert alert-danger">
+                        Number should be of 10 digits!Invalid Mobile Number
+                  </div>
+                  </div>
+           </div>
+           
+           <div class="form-group">
+              <label>Select a gender</label>
+             <select class="form-control" value="enter the gender" name="gender" #gender="ngModel" required ngModel>
+               <option value="none" selected disabled hidden> Choose a  gender </option>
+               <option  [value]="ss" *ngFor="let ss of Gender;">
+                 {{ss}}
+               </option>
+               <div *ngIf="gender.errors && gender.touched" class="alert alert-danger">
+               <div [hidden]="!gender.errors.required" class="alert alert-danger">
+                 Please Select a Gender
+                 </div>
                </div>
+             </select>
            </div>
-       </div>
-       <div class="form-group">
-         <input type='text' name="street" class="form-control" placeholder="Enter Street Name" #street="ngModel" required ngModel>
-         <div *ngIf="street.errors && street.touched" class="alert alert-danger">
-             <div [hidden]="!street.errors.required" class="alert alert-danger">
-             Please Enter Street
-             </div>
-         </div>
-       </div>
-       <div class="form-group">
-         <input type='text' name="city" class="form-control" placeholder="Enter City Name" #city="ngModel" required ngModel>
-         <div *ngIf="city.errors && city.touched" class="alert alert-danger">
-             <div [hidden]="!city.errors.required" class="alert alert-danger">
-             Please Enter City
-             </div>
-         </div>
-       </div>
-       <div class="form-group">
-         <input type='text' name="state" class="form-control" placeholder="Enter State Name" #state="ngModel" required ngModel>
-         <div *ngIf="state.errors && state.touched" class="alert alert-danger">
-             <div [hidden]="!state.errors.required" class="alert alert-danger">
-             Please Enter State
-             </div>
-         </div>
-       </div>
-       <div class="form-group">
-         <input type='number' name="Pincode" class="form-control" placeholder="Enter Pincode" #pincode="ngModel" [pattern]="pincode1" required ngModel>
-         <div *ngIf="pincode.errors && pincode.touched" class="alert alert-danger">
-             <div [hidden]="!pincode.errors.required" class="alert alert-danger">
-             Please Enter Pincode
-             </div>
-             <div [hidden]="!pincode.errors.pattern" class="alert alert-danger">
-              Pin Number should be of 6 digits!Invalid Pin
-        </div>
-         </div>
-       </div>
-       <div class="form-group">
-         <input type='number'  name="mobile" class="form-control" placeholder="Enter mobile" #mobile="ngModel" [pattern]="mobNumberPattern" required minlength="10" maxlength="10" ngModel>
-         <div *ngIf="mobile.errors && mobile.touched" class="alert alert-danger">
-             <div [hidden]="!mobile.errors.required" class="alert alert-danger">
-                  Please Enter Mobile Number
-             </div>
-              <div [hidden]="!mobile.errors.pattern" class="alert alert-danger">
-                    Number should be of 10 digits!Invalid Mobile Number
-              </div>
-              </div>
-       </div>
-       
-       <div class="form-group">
-          <label>Select a gender</label>
-         <select class="form-control" value="enter the gender" name="gender" #gender="ngModel" required ngModel>
-           <option value="none" selected disabled hidden> Choose a  gender </option>
-           <option  [value]="ss" *ngFor="let ss of Gender;">
-             {{ss}}
-           </option>
-           <div *ngIf="gender.errors && gender.touched" class="alert alert-danger">
-           <div [hidden]="!gender.errors.required" class="alert alert-danger">
-             Please Select a Gender
+           
+           <div class="form-group">
+             <input type='email' name="email" class="form-control" placeholder="Enter EmailId" #email="ngModel" required ngModel>
+             <div *ngIf="email.errors && email.touched" class="alert alert-danger">
+                 <div [hidden]="!email.errors.required" class="alert alert-danger">
+                 Please Enter Email
+                 </div>
              </div>
            </div>
-         </select>
-       </div>
-       
-       <div class="form-group">
-         <input type='email' name="email" class="form-control" placeholder="Enter EmailId" #email="ngModel" required ngModel>
-         <div *ngIf="email.errors && email.touched" class="alert alert-danger">
-             <div [hidden]="!email.errors.required" class="alert alert-danger">
-             Please Enter Email
-             </div>
+    
+    
+           <button [disabled]="!adForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+           <button style="margin-left: 100px;" type="Cancel" (click)="onClickCancel()"  class="btn btn-danger">Cancel</button>
+         </form>
          </div>
-       </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
 
-       <button [disabled]="!adForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
-       <button style="margin-left: 100px;" type="Cancel" (click)="onClickCancel()" class="btn btn-danger">Cancel</button>
-     </form>
-     </div>
 
 
 
