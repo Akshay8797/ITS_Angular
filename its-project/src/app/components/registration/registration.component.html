@@ -157,7 +157,7 @@ designation,noticeperiod,location,sharedetails,primaryskills,secondaryskills)" c
 </div>
 
 <div class="buttons" *ngIf="submit==false">
-     <button [disabled]="!adForm.form.valid" type="submit" (click)="onSelectSubmit()" class="btn btn-primary">Next</button>
+     <button [disabled]="!adForm.form.valid" type="submit" class="btn btn-primary">Next</button>
 
    <button style="margin-left: 100px;" type="Cancel" *ngIf="submit==false" class="btn btn-danger">Cancel</button>
 </div>
@@ -402,9 +402,9 @@ designation,noticeperiod,location,sharedetails,primaryskills,secondaryskills)" c
          </div>
        </div>
 
-
        <button [disabled]="!adForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
-       <button style="margin-left: 100px;" type="Cancel" class="btn btn-danger">Cancel</button>
+       <a [routerLink]="['adminpage/register']" routerLinkActive="active" >
+        <button style="margin-left: 100px;" type="Cancel" class="btn btn-danger">Cancel</button></a>
      </form>
      </div>
 

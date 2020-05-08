@@ -57,6 +57,7 @@ export class RegisterComponent {
   onSubmit(experience:any,qualification:any,
     designation:any,noticeperiod:any,location:any,sharedetails:any,primaryskills:any,secondaryskills:any)
   {
+    this.submit=true;
     
     this.getRegistrationservice.addCandidate({
  
@@ -98,11 +99,7 @@ this.id=response;
       console.log("added",response));
       alert("Candidate Detils Added")
   }
-
-onSelectSubmit()
-{
-  this.submit=true;
-}
+onClickSubmitResult(){}
 
 OnClick(){
   this.userService.removeSessionId(localStorage.getItem('sessionId')).subscribe((response)=>{console.log(response)});

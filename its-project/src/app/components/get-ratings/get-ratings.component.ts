@@ -26,11 +26,13 @@ export class GetRatingsComponent implements OnInit {
   public responseSetResult;
   public successDisplay=false;
   OnSelectedCandidate(interviewId){
+    this.successDisplay=false;
     this.getFreeTechPanelService.getRatings(interviewId).subscribe ((response)=> {
-      this.ratingsBoth=response; 
-      console.log("Received : ",this.eligibleCandidate); })  
-      this.rating=true;
-      this.interviewId=interviewId;
+    this.ratingsBoth=response; 
+    console.log("Received : ",this.eligibleCandidate); })  
+    this.rating=true;
+    this.interviewId=interviewId;
+      
   }
   setResult(){
     this.result=true;
