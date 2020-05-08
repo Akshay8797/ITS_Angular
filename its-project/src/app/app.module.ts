@@ -23,12 +23,11 @@ import { TechPaneInterviewComponent } from './components/techPanelComponent/tech
 import { TechPanelResultComponent } from './components/techPanelComponent/techPanelResult.component';
 import{TechPanelHomePageComponent}from './components/tech-panel-home-page/tech-panel-home-page.component';
 import { TechPanelService } from './services/techPanel.services';
-/*
 import { HRRatingComponent } from './Components/hrPanelComponents/hrRating.components';
 import { HRCandidateComponent } from './Components/hrPanelComponents/hrCandidateList.components';
 import { HRResultComponent } from './Components/hrPanelComponents/hrResultList.components';
 import { HrPanelHomePageComponent } from './Components/hr-panel-home-page/hr-panel-home-page.component';
-import { HrComponent } from './components/hrcomp/hrCandidates.component';*/
+import { HrComponent } from './components/hrcomp/hrCandidates.component';
 import { ResetPassCompomnent } from './components/resetpasscomp/userResetPass.component';
 
 @NgModule({
@@ -41,7 +40,7 @@ import { ResetPassCompomnent } from './components/resetpasscomp/userResetPass.co
     ScheduleHrinterviewComponent, GetRatingsComponent,
     RegisterComponent,SearchComponent,
     UserComponent,TechPaneInterviewComponent,TechPanelRatingComponent,TechPanelResultComponent,TechPanelHomePageComponent,
-    /*HRRatingComponent,HRCandidateComponent,HRResultComponent, HrPanelHomePageComponent, HrComponent,*/ ResetPassCompomnent
+    HRRatingComponent,HRCandidateComponent,HRResultComponent, HrPanelHomePageComponent, HrComponent,ResetPassCompomnent
   ],
   imports: [
     BrowserModule,
