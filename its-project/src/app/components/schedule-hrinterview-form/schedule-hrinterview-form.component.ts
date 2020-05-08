@@ -25,7 +25,8 @@ export class ScheduleHrinterviewFormComponent {
     this.getFreeTechPanelService.sendtoHr(id,date,time,this.hrId).subscribe((response)=>{
         this.hrPanelSelected=response;
         console.log("Received : ",this.hrPanelSelected);
-    });
+        alert("HR Interview has been scheduled");
+          });
     
   }
 

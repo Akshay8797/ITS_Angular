@@ -1,0 +1,52 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Interview Management</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>HR Panel</p>
+          
+            <li class="active">
+                <a href="#informationMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Information</a>
+                <ul class="collapse list-unstyled" id="informationMenu">
+                    <li>
+                        <a routerLink="/hrPanelHomePage/hrCandidateList" routerLinkActive="active">Technical Qualifiers' List</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a routerLink="/hrPanelHomePage/hrRatingServices" routerLinkActive="active">Give Rating</a>
+            </li>
+            <li>
+                <a routerLink="/hrPanelHomePage/hrResultList" routerLinkActive="active">View Final Results</a>
+            </li>
+            <li>
+                <a  routerLink="/login" routerLinkActive="active">Logout</a>
+            </li>
+            <li>
+                <a  routerLink="/user/resetpassword" routerLinkActive="active" >Reset Password</a>
+            </li>
+           
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1>Welcome User </h1>
+              <br>
+          
+          </div>
+    </div>
+        
+    </div>
+    
+</div>
+
+<!-- <hrRatingServices></hrRatingServices> -->
+<!-- <hrCandidateList></hrCandidateList> -->
+<!-- <hrResultList></hrResultList> -->
+<router-outlet></router-outlet>

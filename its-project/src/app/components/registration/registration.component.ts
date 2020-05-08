@@ -1,28 +1,10 @@
 import { Component } from '@angular/core';
 import { GetFreeTechPanelService } from 'src/app/services/get-free-panel.service'
 import { UserService } from 'src/app/services/login.service';
+import {Router} from '@angular/router';
 
-export class User {
-  
-  public experience: Number;
-  public qualification: string;
-  public primaryskills: string;
-  public secondaryskills: string;
-  public designation: string;
-  public noticeperiod: string;
-  public location: string;
-  public sharedetails: string;
-  public firstname: string;
-  public lastname: string;
-  public dateofbirth:Date;
-  public gender: string;
-  public street: string;
-  public city: string;
-  public state: string;
-  public pincode: string;
-  public mobilenumber: string;
-  public email: string;
-}
+
+
 @Component({
   selector: 'register',
   templateUrl: './registration.component.html',
@@ -47,7 +29,7 @@ export class RegisterComponent {
   public getRegistrationservice;
   public submit:boolean=false;
   
-  constructor(private getFreeTechPanelService: GetFreeTechPanelService,private userService:UserService) 
+  constructor(private getFreeTechPanelService: GetFreeTechPanelService,private userService:UserService, private router:Router) 
   {
     
     this.getRegistrationservice=getFreeTechPanelService;
@@ -57,8 +39,7 @@ export class RegisterComponent {
   onSubmit(experience:any,qualification:any,
     designation:any,noticeperiod:any,location:any,sharedetails:any,primaryskills:any,secondaryskills:any)
   {
-    this.submit=true;
-    
+     this.submit=true;
     this.getRegistrationservice.addCandidate({
  
        "primarySkills":primaryskills.value,
@@ -97,9 +78,14 @@ this.id=response;
       "emailId":emailid.value
       },this.id).subscribe((response)=>
       console.log("added",response));
-      alert("Candidate Detils Added")
+      alert("Candidate Details Added");
+     this.router.navigateByUrl('/homepage');
   }
-onClickSubmitResult(){}
+  onClickCancel()
+    {
+      this.router.navigateByUrl('/homepage');
+    }
+
 
 OnClick(){
   this.userService.removeSessionId(localStorage.getItem('sessionId')).subscribe((response)=>{console.log(response)});

@@ -31,23 +31,25 @@ export class UserComponent {
       }
 
       onSubmit(userid,password) {
+        console.log(userid,password);
         this.userService.generateUserHomepage(userid, password,this.sharedValue).subscribe((response)=> {
           this.returnedObject=response; 
           console.log(this.returnedObject);
           this.getFreeTechPanelService.setSessionVariable(this.returnedObject);
           sessionStorage.setItem('sessionId',String(this.returnedObject))
-          if(this.returnedObject!= "failed"){
-            this.loginFail=true;    
+          if(this.returnedObject== "failed"){
+            this.loginFail=true;
+            alert("Wrong user name or password");    
           }
           if(this.sharedValue== "0" && this.returnedObject!= "failed")     {
           console.log("inside if")
           this.router.navigateByUrl('adminpage/homepage');
         }
         else if(this.returnedObject!= "failed" && this.sharedValue== "1"){
-          this.router.navigate(['/adminpageTech']);
+          this.router.navigate(['/techPanelHomePage']);
         }
         else if(this.returnedObject!= "failed" && this.sharedValue== "2"){
-          this.router.navigate(['/hrpage']);
+          this.router.navigate(['/hrPanelHomePage']);
         }
       }) ;    
         

@@ -32,8 +32,8 @@ export class UserService {
      
    generateUserHomepage(userid:string,password:string,sharedValue:string):Observable<Object>{
       return this.http.post('http://localhost:8080/user/login' ,{},
-      {headers:this.httpHeaders,responseType:"text",params:
-      {'userId':userid,'password':password,'userType':sharedValue}}).pipe(catchError(this.handleError));
+      {headers:this.httpHeaders,responseType:"text",params:{'userId':userid,'password':password
+      ,'userType':sharedValue}}).pipe(catchError(this.handleError));
       ;
       
     }

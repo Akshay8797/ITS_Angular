@@ -1,22 +1,45 @@
-<div class="conatiner col-md-6 offset-3">
-    <div>
-        <br>
-        <h3>User Reset Password</h3>
-        <br>
-    </div>
-    <form #resetForm="ngForm" (ngSubmit)="onSubmit(resetForm.value)" method="post">
-        <div class="form-group row">
-            <label>Enter User-Id</label>
-            <input type="text" class="form-control" [(ngModel)]="userId" name="userId">
+<!DOCTYPE html>
+<html>
+    
+<body>
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3></h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p>Options</p>
+                    <li>
+                      <a  routerLink="/login" routerLinkActive="active">Back to Login</a>
+                    </li>
+                </ul>
+
+            </nav>
+            <div class="conatiner col-md-6 offset-3">
+                <div>
+                    <br>
+                    <h3>User Reset Password</h3>
+                    <br>
+                </div>
+                <form #resetForm="ngForm" (ngSubmit)="onSubmit(resetForm.value)" method="post">
+                    <div class="form-group row">
+                        <label>Enter User-Id</label>
+                        <input type="text" class="form-control" [(ngModel)]="userId" name="userId">
+                    </div>
+                    <div class="form-group row">
+                        <label>Enter Current Password</label>
+                        <input type="password" class="form-control" [(ngModel)]="curPassword" name="curPassword">
+                    </div>
+                    <div class="form-group row">
+                        <label>Enter New Password</label>
+                        <input type="password" class="form-control" [(ngModel)]="newPassword" name="newPassword">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Reset Password</button>
+                </form>
+            </div>
         </div>
-        <div class="form-group row">
-            <label>Enter Current Password</label>
-            <input type="password" class="form-control" [(ngModel)]="curPassword" name="curPassword">
-        </div>
-        <div class="form-group row">
-            <label>Enter New Password</label>
-            <input type="password" class="form-control" [(ngModel)]="newPassword" name="newPassword">
-        </div>
-        <button type="submit" class="btn btn-primary">Reset Password</button>
-    </form>
-</div>
+</body>
+
+</html>

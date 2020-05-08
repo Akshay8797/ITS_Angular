@@ -1,0 +1,71 @@
+<!--View Candidates to be Interviewed-->
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Interview Management</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Tech Panel</p>
+          
+            <li class="active">
+                <a href="#informationMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Information</a>
+                <ul class="collapse list-unstyled" id="informationMenu">
+                    <li>
+                        <a routerLink="/techPanelHomePage/techPanelInterviewList" routerLinkActive="active">Interview Qualifiers List</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a routerLink="/techPanelHomePage/techPanelRating" routerLinkActive="active">Give Rating</a>
+            </li>
+            <li>
+                <a routerLink="/techPanelHomePage/techPanelResult" routerLinkActive="active">View Final Results</a>
+            </li>
+          <li>
+            <a routerLink="/login" routerLinkActive="active" (click)="OnClick()">Logout</a>
+          </li>
+        </ul>
+    </nav>
+    
+
+    <!-- Page Content  -->
+    <div id="content">
+        
+    </div>
+    
+</div>
+<form #techForm="ngForm" (ngSubmit)="onSubmit(techForm.value)" class="col-md-4 offset-md-4" novalidate>
+    <h1>Tech Panel :</h1><br>
+    <div class="form-group">
+        <i class="fas fa-id-card"></i>
+        Interview Id :
+        <input type="text" class="form-control" name="id" required minlength="1"  #id #idModelRef="ngModel" placeholder="Enter Interview Id"   ngModel>
+            <div *ngIf="idModelRef.errors && idModelRef.touched" class="alert alert-danger">
+                <div [hidden]="!idModelRef.errors.required" class="alert alert-danger">interview id cannot be left blank</div>
+                <div [hidden]="!idModelRef.errors.minlength" class="alert alert-danger">Id must be atleast 1 character</div>
+            </div>
+    </div>
+    <div class="form-group">
+        <i class="fab fa-accusoft"></i>
+        Subject :
+        <input type="text" class="form-control" name="subject" required minlength="2" placeholder="Enter the subject " #subject #subjectModelRef="ngModel" ngModel>
+            <div *ngIf="subjectModelRef.errors && subjectModelRef.touched" class="alert alert-danger">
+                <div [hidden]="!subjectModelRef.errors.required" class="alert alert-danger">subject should not be left blank</div>
+                <div [hidden]="!subjectModelRef.errors.minlength" class="alert alert-danger">Subject must be atleast 2 characters</div>
+            </div>
+    </div>   
+    <div class="form-group">
+        <i class="fas fa-file-alt"></i>
+        Tech Rating :
+        <input type="text" class="form-control" name="tRating" required minlength="1" pattern="^([1-4]\.[0-9]|5\.0)$"placeholder="Enter Tech Rating" #tRating  #tRatingModelRef="ngModel" ngModel>
+        <div *ngIf="tRatingModelRef.errors && tRatingModelRef.touched" class="alert alert-danger">
+            <div [hidden]="!tRatingModelRef.errors.required" class="alert alert-danger">tech rating should not be left blank</div>
+            <div [hidden]="!tRatingModelRef.errors.minlength" class="alert alert-danger">Rating must be atleast 1 character</div>
+            <div [hidden]="!tRatingModelRef.errors.pattern" class="alert alert-danger">tech rating should be between 1.0-5.0</div>
+        </div>
+    </div>   
+    <button [disabled]="!techForm.form.valid" type="submit" class="btn btn-primary"><i class="fas fa-handshake"></i> Submit</button>
+</form>
+<router-outlet></router-outlet>

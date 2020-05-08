@@ -24,6 +24,8 @@ export class TechInterviewComponent{
     this.getFreeTechPanelService.sendtoTech(id,date,time,this.techid,subject).subscribe((response)=>{
         this.techPanelSelected=response;
         console.log("Received : ",this.techPanelSelected);
+        alert("Technical Interview has been scheduled");
+      
     });
     
   }
