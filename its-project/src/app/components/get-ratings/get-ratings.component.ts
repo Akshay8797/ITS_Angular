@@ -23,6 +23,8 @@ export class GetRatingsComponent implements OnInit {
   public ratingsBoth:any;
   public result=false;
   public choices=[{ch:"selected"},{ch:"rejected"}]
+  public shareDetails=[{panel:"0"},{panel:"1"},{panel:"2"},{panel:"3"}]
+  public shareDetailsValue;
   public responseSetResult;
   public successDisplay=false;
   OnSelectedCandidate(interviewId){
@@ -37,6 +39,13 @@ export class GetRatingsComponent implements OnInit {
   setResult(){
     this.result=true;
   }
+  
+  OnSelectShareDetails(shareDetailsValue){
+    this.getFreeTechPanelService.setShareResult(this.interviewId,shareDetailsValue).subscribe((response)=>{
+      this.responseSetResult=response;
+      console.log("Set result: ",this.responseSetResult);
+  });  }
+  
   OnSelectResult(result){
     this.getFreeTechPanelService.setResult(this.interviewId,result).subscribe((response)=>{
       this.responseSetResult=response;

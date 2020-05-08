@@ -97,7 +97,18 @@
     </div>
 
     <div *ngIf="rating==true" class="detail vertical-center text-center"> Tech Rating:{{ratingsBoth.TechRating}} Hr Rating:{{ratingsBoth.HrRating}} <button class="btn btn-dark" (click)="setResult()">Set Result</button></div>
-    
+   
+    <div *ngIf="result==true" class="detail vertical-center text-center"> 
+        <label for=shareDetails>
+            Set Share Details
+        </label>
+        <select id=shareDetails (change)="OnSelectShareDetails(shareDetailsValue)" [(ngModel)]="shareDetailsValue">
+            <option >--Select Panel--</option>
+            <option *ngFor="let element of shareDetails;" [ngValue]="element.panel">
+                {{element.panel}}
+            </option>
+        </select>
+    </div>
     <div *ngIf="result==true" class="detail vertical-center text-center"> 
         <label for=Result>
             Set Result
@@ -109,6 +120,7 @@
             </option>
         </select>
     </div>
+    
     <div *ngIf="successDisplay==true" class="detail vertical-center text-center"> Result submitted</div>
     
     <router-outlet></router-outlet>

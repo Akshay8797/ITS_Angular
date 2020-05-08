@@ -64,7 +64,9 @@ export class GetFreeTechPanelService {
       return this.http.put('http://localhost:8080/admin/toHr' ,{},
       {headers:this.httpHeaders,params:{'interviewId':id,'date':date,'time':time,'empHrId':hrid}})
      }
-
+  setShareResult(interviewId,shareDetailsValue){
+    return this.http.post('http://localhost:8080/admin/results/share' ,{},{headers:this.httpHeaders,params:{'interviewId':interviewId,'shareResult':shareDetailsValue}});
+  }
   setResult(interviewId,result):Observable<Object>{
     return this.http.post('http://localhost:8080/admin/results/set' ,{},{headers:this.httpHeaders,params:{'interviewId':interviewId,'result':result}});
   
